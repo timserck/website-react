@@ -1,0 +1,13 @@
+.menu {
+    flex: 0 0 auto;
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nav {
+        &__li {
+            &--a {}
+        }
+    }
+}

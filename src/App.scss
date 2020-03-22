@@ -1,0 +1,25 @@
+@import url(/src/theme/reset.scss);
+//perso reset 
+ul {
+    padding: 0;
+    li {
+        list-style: none;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+///
+html,
+body,
+#root,
+.App {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.App {
+    display: flex;
+}
