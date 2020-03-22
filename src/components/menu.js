@@ -4,7 +4,7 @@ import './menu.scss';
 const { useState } = React;
 
 
-function Menu(parentCallback) {
+function Menu() {
   const [currentProject, setCurrentProject] = useState("tfe");
 
   function selectProject(e) {
@@ -12,7 +12,7 @@ function Menu(parentCallback) {
     let value = e.target.href.substring(e.target.href.lastIndexOf('/') + 1);
     console.log(e.target.href.substring(e.target.href.lastIndexOf('/') + 1));
     setCurrentProject(value);
-    parentCallback(currentProject);
+    //parentCallback(currentProject);
   }
 
   return (

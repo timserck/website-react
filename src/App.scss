@@ -1,4 +1,6 @@
-@import url(/src/theme/reset.scss);
+@import url(/src/theme/main.scss);
+$playgair: 'Playfair Display';
+$openSans: 'Open Sans';
 //perso reset 
 ul {
     padding: 0;
@@ -18,6 +20,21 @@ body,
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $openSans;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #2a2a2a
 }
 
 .App {

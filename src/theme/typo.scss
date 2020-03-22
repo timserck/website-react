@@ -1,0 +1,24 @@
+$playgair: 'Playfair Display';
+$openSans: 'Open Sans';
+h1 {
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 5rem;
+    width: 100%;
+    text-align: center;
+    svg {
+        width: 12rem;
+        height: auto
+    }
+}
+
+h2 {
+    color: $or;
+    font-size: 4rem;
+    font-size: 3.5vh;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+    font-family: $playgair;
+    padding: 1.6rem 0
+}
