@@ -30,7 +30,6 @@ function Menu(props) {
       <div className="menu"> 
         <menu className="nav">
           <ul>
-            <li>{val}</li>
             <li className="nav__li"><a onMouseOver={(e) => selectProject(e, set)} className="nav__li--a" href="tfe">Little voice</a></li>
             <li className="nav__li"><a onMouseOver={(e) => selectProject(e, set)} className="nav__li--a" href="libia">Libia velo</a></li>
             <li className="nav__li"><a onMouseOver={(e) => selectProject(e, set)} className="nav__li--a" href="lab">Old website</a></li>
