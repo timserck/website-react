@@ -13,10 +13,10 @@ export const MyContext = React.createContext(selectProject);
 
 function App() {
 
-  function childHandler(dataFromChild) {
-    console.log(dataFromChild);
+  // function childHandler(dataFromChild) {
+  //   console.log(dataFromChild);
 
-  }
+  // }
 
 
   const [currentProject, setCurrentProject] = useState("tfe");
@@ -25,7 +25,8 @@ function App() {
     <MyContext.Provider value={{ val: currentProject, set: setCurrentProject }} >
       <div className="App">
           <Logo />
-          <Menu callback={childHandler} />
+          <Menu />
+          {/* <Menu callback={childHandler} /> */}
           <Projet/>
       </div>
     </MyContext.Provider>
