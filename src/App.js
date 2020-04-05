@@ -3,24 +3,32 @@ import React from 'react';
 import './App.scss';
 import Menu from './components/menu.js';
 import Projet from './components/projet.js';
+import Logo from './components/logo.js';
+const { useState } = React;
+const  selectProject = {'project' : 'tfe'}
+export const MyContext = React.createContext(selectProject);
 
-  function callback(currentProject) {
-    console.log(currentProject, 'currentProject')
-    // do something with value in parent component, like save to state
-  }
+
+
 
 function App() {
 
-  function callback(currentProject) {
-    console.log(currentProject, 'currentProject')
-    // do something with value in parent component, like save to state
+  function childHandler(dataFromChild) {
+    console.log(dataFromChild);
+
   }
-  
+
+
+  const [currentProject, setCurrentProject] = useState("tfe");
+
   return (
-    <div className="App">
-         <Menu parentCallback={callback}/> 
-         <Projet/>
-    </div>
+    <MyContext.Provider value={{ val: currentProject, set: setCurrentProject }} >
+      <div className="App">
+          <Logo />
+          <Menu callback={childHandler} />
+          <Projet/>
+      </div>
+    </MyContext.Provider>
   );
 }
 

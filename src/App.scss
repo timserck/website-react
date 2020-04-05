@@ -1,6 +1,4 @@
-@import url(/src/theme/main.scss);
-$playgair: 'Playfair Display';
-$openSans: 'Open Sans';
+@import "theme/main.scss";
 //perso reset 
 ul {
     padding: 0;
@@ -23,6 +21,7 @@ body,
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: $blue;
 }
 
 html {
