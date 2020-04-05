@@ -61,17 +61,38 @@ function Projet() {
             
             {({ val, set }) => (
                
-                <div className={`projet  is--${val}  `}>  
+                
 
-     <div className="projet__picture">
-         <img  className="projet__picture_img" src="http://timotheeserck.be/imgs/image1.png" alt=""/>
-     </div>
-     <div className="projet__description">
-                        <h2 className="projet__description_title">${val}</h2> 
-                    <div className="projet__description_tags"><span>tag</span></div>
-                    <p className="projet__description_txt">descriptoin</p>
-     </div>
-    </div>
+
+                    {
+                        Projects.map((item, i) => {
+
+                            if (item.title === val) {
+
+
+                                return (
+                                    <div className={`projet  is--${val} `}>  
+
+                                        <div className="projet__picture">
+                                            <img className="projet__picture_img" src="{item.image}" alt="" />
+                                        </div>
+                                        <div className="projet__description">
+                                            <h2 className="projet__description_title">${item.title}</h2>
+                                            <div className="projet__description_tags"><span>${item.tag[0]}</span></div>
+                                            <p className="projet__description_txt">${item.description}</p>
+                                        </div>
+                                        
+                                    </div>
+                                )
+
+                            }
+                           
+
+                             
+                        })
+                    }
+
+                
           )}
           </MyContext.Consumer>
   );
