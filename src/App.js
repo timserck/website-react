@@ -19,14 +19,15 @@ function App() {
   // }
 
 
+   
+  const [displayProject, setDisplayProject] = useState(false);
   const [currentProject, setCurrentProject] = useState("tfe");
 
   return (
-    <MyContext.Provider value={{ val: currentProject, set: setCurrentProject }} >
+      <MyContext.Provider value={{ val: currentProject, set: setCurrentProject, show: displayProject, setShow: setDisplayProject } } >
       <div className="App">
           <Logo />
           <Menu />
-          {/* <Menu callback={childHandler} /> */}
           <Projet/>
       </div>
     </MyContext.Provider>

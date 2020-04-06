@@ -2,17 +2,8 @@ import React from 'react';
 import {MyContext} from "../App.js"
 import './projet.scss';
 
-function currentSection(val){
-
-    console.log(val)
-    Projects.forEach((project) => {
-
-        if (val == project.title) {
-            console.log(project);
-            return project;
-        }
-    })
-
+function backProject(show, setShow) {
+    setShow(false);
 }
 
 
@@ -29,28 +20,28 @@ const Projects = [
         'title': 'libia',
         'tag': ['at', 'dez', 'azeeeer'],
         'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image1.png'
+        'image': 'http://timotheeserck.be/imgs/image2.png'
 
     },
     {
         'title': 'lab',
         'tag': ['eeat', 'dez', 'azer'],
         'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image1.png'
+        'image': 'http://timotheeserck.be/imgs/image3.png'
 
     },
     {
         'title': 'zeldman',
         'tag': ['at', 'dez', 'azer'],
         'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image1.png'
+        'image': 'http://timotheeserck.be/imgs/image4.png'
 
     },
     {
         'title': 'atelierDesign',
         'tag': ['at', 'dez', 'azezrter'],
         'description': 'desciption tytyuytyczerzetrycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image1.png'
+        'image': 'http://timotheeserck.be/imgs/image5.png'
 
     }
 ]
@@ -58,43 +49,46 @@ const Projects = [
 function Projet() {
     return (
         <MyContext.Consumer>
-            
-            {({ val, set }) => (
-               
-                
 
 
-                    {
-                        Projects.map((item, i) => {
+            {({ val, set, show, setShow }) => (
 
-                            if (item.title === val) {
+                Projects.map((item, i) => {
+                    //console.log(item, val)
+                    if (item.title == val) {
+                        
 
+                        return (
 
-                                return (
-                                    <div className={`projet  is--${val} `}>  
+                            <div key={i} className={`projet  is--${val} ${show === false ? '' : 'is--active'}`}>
 
-                                        <div className="projet__picture">
-                                            <img className="projet__picture_img" src="{item.image}" alt="" />
-                                        </div>
-                                        <div className="projet__description">
-                                            <h2 className="projet__description_title">${item.title}</h2>
-                                            <div className="projet__description_tags"><span>${item.tag[0]}</span></div>
-                                            <p className="projet__description_txt">${item.description}</p>
-                                        </div>
-                                        
+                                <div className="projet__picture">
+                                    <img className="projet__picture_img" src={item.image} alt="" />
+                                    <button onClick={(e) => { backProject(show, setShow) }} className={`${show === false ? '' : 'is--active'} projet__back`}>
+
+                                        <span className="projet__back_txt">BACK</span>
+
+                                    </button>
+
+                                </div>
+                                <div className="projet__description">
+                                    <div className="project__description_wrapper">
+                                        <h2 className="projet__description_title">{item.title}</h2>
+                                        <div className="projet__description_tags"><span>{item.tag[0]}</span></div>
+                                        <p className="projet__description_txt">{item.description}</p>
                                     </div>
-                                )
+                                </div>
 
-                            }
-                           
-
-                             
-                        })
+                            </div>
+                            
+                         
+                            
+                            )
                     }
+                })
 
-                
-          )}
-          </MyContext.Consumer>
+           )}
+        </MyContext.Consumer>
   );
 }
 
