@@ -12,36 +12,48 @@ function backProject(show, setShow) {
 const Projects = [
     {
     'title': 'tfe',
-    'tag': ['at', 'dez', 'azer'],
-        'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image1.png'
+        'tags': ['nodeJs', 'graduate',],
+        'description': `This game is my Graduation project. A game where two people with differents abilities have to find the exit together.
+				With this approche i would sensiblisate the user to the accessibilite of the web.`,
+        'image': 'http://timotheeserck.be/imgs/image1.png',
+        'btn': 'how far did you go ?',
+        'link':'https://serck.ddns.net/timoth%C3%A9e/tfe/dist/'
+
     },
     {
         'title': 'libia',
-        'tag': ['at', 'dez', 'azeeeer'],
+        'tags': ['at', 'dez', 'azeeeer'],
         'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image2.png'
+        'image': 'http://timotheeserck.be/imgs/image2.png',
+        'btn': 'how far did you go ?',
+        'link': 'https://serck.ddns.net/timoth%C3%A9e/tfe/dist/'
 
     },
     {
         'title': 'lab',
-        'tag': ['eeat', 'dez', 'azer'],
+        'tags': ['eeat', 'dez', 'azer'],
         'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image3.png'
+        'image': 'http://timotheeserck.be/imgs/image3.png',
+        'btn': 'how far did you go ?',
+        'link': 'https://serck.ddns.net/timoth%C3%A9e/tfe/dist/'
 
     },
     {
         'title': 'zeldman',
-        'tag': ['at', 'dez', 'azer'],
+        'tags': ['at', 'dez', 'azer'],
         'description': 'desciption tytyuytycycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image4.png'
+        'image': 'http://timotheeserck.be/imgs/image4.png',
+        'btn': 'how far did you go ?',
+        'link': 'https://serck.ddns.net/timoth%C3%A9e/tfe/dist/'
 
     },
     {
         'title': 'atelierDesign',
-        'tag': ['at', 'dez', 'azezrter'],
+        'tags': ['at', 'dez', 'azezrter'],
         'description': 'desciption tytyuytyczerzetrycyv  yvy yy',
-        'image': 'http://timotheeserck.be/imgs/image5.png'
+        'image': 'http://timotheeserck.be/imgs/image5.png',
+        'btn': 'how far did you go ?',
+        'link': 'https://serck.ddns.net/timoth%C3%A9e/tfe/dist/'
 
     }
 ]
@@ -72,11 +84,23 @@ function Projet() {
 
                                 </div>
                                 <div className="projet__description">
-                                    <div className="project__description_wrapper">
+                                    <a href={item.link} className="project__description_link">
                                         <h2 className="projet__description_title">{item.title}</h2>
-                                        <div className="projet__description_tags"><span>{item.tag[0]}</span></div>
+                                        <div className="projet__description_tags">
+                                            {
+                                                item.tags.map((tag, i) => {
+                                                    //console.log(item, i);
+                                                    return (
+                                                        <span className="projet__description_tags--tag" key={i}>#{tag}</span>
+                                                        )
+                                                    
+                                                })
+                                            }
+                                        </div>
                                         <p className="projet__description_txt">{item.description}</p>
-                                    </div>
+                                        < button className="projet__description_btn"></button>
+
+                                    </a>
                                 </div>
 
                             </div>
